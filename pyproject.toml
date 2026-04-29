@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "businessmembench"
+version = "0.1.0"
+description = "A propagation-aware memory benchmark — 149 deterministic questions across 7 categories testing what business operators actually need from memory layers."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Richard Schefren", email = "rich@strategicprofits.com" },
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+graphiti = ["graphiti-core"]
+mem0 = ["mem0ai"]
+letta = ["letta-client"]
+memori = ["memorisdk"]
+all = [
+    "graphiti-core",
+    "mem0ai",
+    "letta-client",
+    "memorisdk",
+]
+dev = [
+    "pytest>=7",
+    "ruff>=0.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/RichSchefren/businessmembench"
+Repository = "https://github.com/RichSchefren/businessmembench"
+"Reference implementation" = "https://github.com/RichSchefren/atlas"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["businessmembench*"]
+
+[tool.setuptools.package-data]
+businessmembench = ["gold_human/*.jsonl", "gold_human/*.md"]
