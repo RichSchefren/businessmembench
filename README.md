@@ -12,6 +12,12 @@ Existing memory benchmarks (LoCoMo, LongMemEval, MemoryArena) test retrieval. Th
 
 BusinessMemBench is the test set for **propagation-aware** memory. The headline category is **reassessment**: a price changes, and downstream margin claims that quoted the old price must update. A memory system that only retrieves stale beliefs scores 0.000 here. A system that merely flags affected beliefs scores partial credit. A system that re-evaluates them scores 1.000.
 
+AI can remember information about a person while still not knowing how that
+person would rule after a fact changes. BusinessMemBench makes that gap
+measurable through its reassessment and propagation categories. This project is
+part of Rich Schefren's
+[Imprinted AI](https://aistrategist.com/imprinted-ai) work.
+
 ## What's in the box
 
 - **Question generator** — deterministic seed=42 corpus generation across 7 categories
